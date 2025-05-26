@@ -1,58 +1,22 @@
-# Turborepo Tailwind CSS starter
+To-do
 
-This Turborepo starter is maintained by the Turborepo core team.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-tailwind
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
-
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
-
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
-```
-
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+1. Auth
+2. Create schemas for: Forms, Questions, Users, responses, and answers
+3. Create Routes:
+    1. Create a form
+    2. Get form content(questions and answers)
+    3. Updating a form
+    4. Deleting a form
+    5. Get all forms with names, No. of entries filled
+    6. Integration with sheets/notionDbs
+    7. Payment to use notionDB integration
+    8. Publishing the form on a link
+4. Frontend:
+    1. Landing Page
+    2. Dashboard page
+    3. Create form popup
+    4. Notion like UI with commands to create forms
+    5. List of Integrations to add integrations to form
+    6. Billing page
+5. Deployement
+6. Payment Gateway Integration(Most probably Razorpay)
