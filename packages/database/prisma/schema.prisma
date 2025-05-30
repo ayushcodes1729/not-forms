@@ -24,12 +24,43 @@ model Form {
   id          String   @id @default(uuid())
   title       String
   description String?
+  welcome     String?
+  end         String?
+  questions   Question[]
   createdAt   DateTime @default(now())
   updateAt    DateTime @updatedAt
   userId      String
   user        User     @relation(fields: [userId], references: [id])
 }
 
+model Question {
+  id       String       @id @default(uuid())
+  ques     String
+  quesType QuestionType
+  required Boolean
+  oder     Int
+  formId   String
+  form     Form         @relation(fields: [formId], references: [id])
+}
+
 enum Provider {
   Google
+}
+
+enum QuestionType {
+  TEXT
+  NUMBER
+  DATE
+  EMAIL
+  PHONE
+  ADDRESS_SELECT
+  LINK
+  MCQ
+  CHECKBOXES
+  BOOLEAN
+  LEGAL
+  IMG_UPLOAD
+  DROPDOWN
+  RATING
+  RANKING
 }
