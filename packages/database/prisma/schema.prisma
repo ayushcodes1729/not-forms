@@ -21,16 +21,17 @@ model User {
 }
 
 model Form {
-  id          String   @id @default(uuid())
+  id          String     @id @default(uuid())
   title       String
   description String?
   welcome     String?
   end         String?
   questions   Question[]
-  createdAt   DateTime @default(now())
-  updateAt    DateTime @updatedAt
+  responses   Response[]
+  createdAt   DateTime   @default(now())
+  updateAt    DateTime   @updatedAt
   userId      String
-  user        User     @relation(fields: [userId], references: [id])
+  user        User       @relation(fields: [userId], references: [id])
 }
 
 model Question {
@@ -39,8 +40,35 @@ model Question {
   quesType QuestionType
   required Boolean
   oder     Int
+  options  Option[]
+  answers  Answer[]
   formId   String
   form     Form         @relation(fields: [formId], references: [id])
+}
+
+model Response {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  answers   Answer[]
+  formId    String
+  form      Form     @relation(fields: [formId], references: [id])
+}
+
+model Option {
+  id         String   @id @default(uuid())
+  index      Int
+  text       String
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+}
+
+model Answer {
+  id         String   @id @default(uuid())
+  value      Json
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+  responseId String
+  response   Response @relation(fields: [responseId], references: [id])
 }
 
 enum Provider {
