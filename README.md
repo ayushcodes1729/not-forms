@@ -1,9 +1,10 @@
 To-do
 
-1. Auth
+1. Auth - Done✅
 2. Create schemas for: Forms, Questions, Users, responses, and answers - Done✅
 3. Create Routes:
     1. Create a form
+    2. Add a question to a form
     2. Get form content(questions and answers)
     3. Updating a form
     4. Deleting a form

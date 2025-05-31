@@ -35,15 +35,16 @@ model Form {
 }
 
 model Question {
-  id       String       @id @default(uuid())
-  ques     String
-  quesType QuestionType
-  required Boolean
-  oder     Int
-  options  Option[]
-  answers  Answer[]
-  formId   String
-  form     Form         @relation(fields: [formId], references: [id])
+  id            String       @id @default(uuid())
+  ques          String
+  quesType      QuestionType
+  required      Boolean
+  oder          Int
+  googleSheedID String?
+  options       Option[]
+  answers       Answer[]
+  formId        String
+  form          Form         @relation(fields: [formId], references: [id])
 }
 
 model Response {
