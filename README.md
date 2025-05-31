@@ -1,7 +1,7 @@
 To-do
 
 1. Auth
-2. Create schemas for: Forms, Questions, Users, responses, and answers
+2. Create schemas for: Forms, Questions, Users, responses, and answers - Done✅
 3. Create Routes:
     1. Create a form
     2. Get form content(questions and answers)

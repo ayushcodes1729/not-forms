@@ -1,6 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Topbar from "./components/topbar";
+import Providers from "./providers";
+
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -16,7 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={geist.className}>{children}</body>
-    </html>
+      <body className={geist.className}>
+        <Providers>
+          <Topbar />
+          {children}
+        </Providers>
+      </body>
+    </html >
   );
 }
