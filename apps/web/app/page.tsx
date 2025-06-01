@@ -1,5 +1,7 @@
 
 import { prisma } from "@repo/db";
+import Hero from "./components/hero";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 export default async function Home() {
   const user = await prisma.user.findFirst()
@@ -9,7 +11,8 @@ export default async function Home() {
   }
   return (
     <div>
-      <form  className="flex flex-col">
+      {/* <HeroHighlight children={"Hey Welcome to Notforms"} className="dark" /> */}
+      <form  className="flex flex-col h-[150vh] justify-between">
         <label htmlFor="formName">Form Name: </label>
         <input type="text" name= "formName"  className="border border-white" required/>
         
