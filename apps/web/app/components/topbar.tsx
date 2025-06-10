@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@/components/ui/button"
 import { signIn, signOut, useSession } from "next-auth/react"
 
 export default function Topbar() {
@@ -21,17 +22,20 @@ export default function Topbar() {
             
             <div className="flex items-center space-x-2 sm:space-x-4">
                 {/* Create Form Button */}
-                <button className="hidden sm:block text-blue-600 px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:bg-blue-50/40 hover:backdrop-blur-sm hover:scale-105 hover:shadow-md hover:shadow-blue-500/10 focus:outline-none focus:ring-2 focus:ring-blue-300/50 border border-blue-200/30 bg-white/30">
+                {/* <button className="hidden sm:block text-blue-600 px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:bg-blue-50/40 hover:backdrop-blur-sm hover:scale-105 hover:shadow-md hover:shadow-blue-500/10 focus:outline-none focus:ring-2 focus:ring-blue-300/50 border border-blue-200/30 bg-white/30">
                     Create Form
-                </button>
+                </button> */}
                 
                 {/* Mobile Create Form Button */}
-                <button className="sm:hidden text-blue-600 px-3 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:bg-blue-50/40 hover:backdrop-blur-sm hover:scale-105 hover:shadow-md hover:shadow-blue-500/10 focus:outline-none focus:ring-2 focus:ring-blue-300/50 border border-blue-200/30 bg-white/30">
-                    Create
-                </button>
+                <Button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-300/50 focus:ring-offset-2 focus:ring-offset-white/10 backdrop-blur-sm border border-white/10">
+                    Create Form
+                </Button>
 
                 {/* Auth Button */}
-                <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-300/50 focus:ring-offset-2 focus:ring-offset-white/10 backdrop-blur-sm border border-white/10">
+                {/* <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-xl font-medium transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-300/50 focus:ring-offset-2 focus:ring-offset-white/10 backdrop-blur-sm border border-white/10">
+                    
+                </button> */}
+                <Button>
                     {
                         session.data?.user ? 
                         <span onClick={() => signOut({ callbackUrl: "/" })} className="text-sm sm:text-base">
@@ -41,7 +45,7 @@ export default function Topbar() {
                             Sign In
                         </span>
                     }
-                </button>
+                </Button>
             </div>
         </div>
     )
