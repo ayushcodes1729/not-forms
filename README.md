@@ -3,7 +3,7 @@ To-do
 1. Auth - Done✅
 2. Create schemas for: Forms, Questions, Users, responses, and answers - Done✅
 3. Create Routes:
-    1. Create a form: POST /forms
+    1. Create a form: POST /form - Done✅
     2. Add a question to a form: normal questions go with just question and tyepe, while advanced questions go with options and other details: POST /forms/questions/:formId
     2. Update a questions in a form: PATCH /forms/questions/:formId/:questionId
     3. Get form content(questions and responses): GET /forms/:formId

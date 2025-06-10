@@ -32,8 +32,11 @@ export async function POST(req:NextRequest) {
         
         const savedData = await prisma.form.create({
             data: {
+                userId: user.id,
                 title: metaData.title,
-                userId: user.id
+                description: metaData?.description,
+                welcome: metaData?.welcome,
+                end: metaData?.end
             }
         })
 

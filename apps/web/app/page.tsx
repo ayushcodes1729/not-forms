@@ -2,6 +2,7 @@
 import { prisma } from "@repo/db";
 import Hero from "./components/hero";
 import { HeroHighlight } from "@/components/ui/hero-highlight";
+import CreateFormPop from "./components/createFormPop";
 
 export default async function Home() {
   const user = await prisma.user.findFirst()
@@ -11,7 +12,7 @@ export default async function Home() {
   }
   return (
     <div>
-      
+      <CreateFormPop />
     </div>
   );
 }
