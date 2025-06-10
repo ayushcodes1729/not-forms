@@ -39,7 +39,7 @@ model Question {
   ques          String
   quesType      QuestionType
   required      Boolean
-  oder          Int
+  order          Int
   googleSheedID String?
   options       Option[]
   answers       Answer[]
